@@ -1,40 +1,13 @@
 #include <bits/stdc++.h>
-#define ii int
-#define ll long long
-#define pb push_back
-#define F first
-#define S second
-#define MOD 1000000007
-
-//░░▄███▄███▄
-//░░█████████
-//░░▒▀█████▀░
-//░░▒░░▀█▀
-//░░▒░░█░
-//░░▒░█
-//░░░█
-//░░█░░░░███████
-//░██░░░██▓▓███▓██▒
-//██░░░█▓▓▓▓▓▓▓█▓████
-//██░░██▓▓▓(◐)▓█▓█▓█
-//███▓▓▓█▓▓▓▓▓█▓█▓▓▓▓█
-//▀██▓▓█░██▓▓▓▓██▓▓▓▓▓█
-//░▀██▀░░█▓▓▓▓▓▓▓▓▓▓▓▓▓█
-//░░░░▒░░░█▓▓▓▓▓█▓▓▓▓▓▓█
-//░░░░▒░░░█▓▓▓▓█▓█▓▓▓▓▓█
-//░▒░░▒░░░█▓▓▓█▓▓▓█▓▓▓▓█
-//░▒░░▒░░░█▓▓▓█░░░█▓▓▓█
-//░▒░░▒░░██▓██░░░██▓▓██
-
 
 using namespace std;
 
 
 char a[6][6];
-ii l=0,p=0,t=0,e=0;
-int soso (ii i,ii j)
+int l=0,p=0,t=0,e=0;
+int soso (int i,int j)
 {
-    ii k=0;
+    int k=0;
     if(a[i - 1] [j - 1] == '0'&& a[i - 2][j - 2] =='.')
     {
         k++;
@@ -142,9 +115,9 @@ int soso (ii i,ii j)
 }
 
 
-int sosx (ii i,ii j)
+int sosx (int i,int j)
 {
-    ii k=0;
+    int k=0;
     if (a[i - 1][j - 1] == 'X'&&a[i - 2][j - 2] == '.')
     {
         k++;
@@ -250,9 +223,9 @@ int sosx (ii i,ii j)
     else
         return 2;
 }
-int sosx1 (ii i,ii j)
+int sosx1 (int i,int j)
 {
-    ii k=0;
+    int k=0;
     if (a[i - 1][j - 1] == '.'&&a[i - 2][j - 2] == '.')
     {
         k++;
@@ -312,9 +285,9 @@ int sosx1 (ii i,ii j)
         return 2;
 }
 
-int sosx2 (ii i,ii j)
+int sosx2 (int i,int j)
 {
-    ii k=0;
+    int k=0;
     if ((a[i - 2][j - 2] == 'X'||a[i - 2][j - 2] == '0'||a[i - 2][j - 2] == '1')&&a[i - 1][j - 1] == '.')
     {
         k++;
@@ -375,9 +348,9 @@ int sosx2 (ii i,ii j)
 }
 
 
-bool prov (ii y,ii u)
+bool prov (int y,int u)
 {
-    ii n=3;
+    int n=3;
     if (y>3||y<1||u>3||u<1)return false;
   y--;u--;
             if (a[y][u]=='0'||a[y][u]=='X') return false;
@@ -393,7 +366,7 @@ int main ()
 
 
 
-    ii n=3,m;
+    int n=3,m;
     cout<<"How will you go?"<<endl;
 
      while (m!=1||m!=2)
@@ -406,41 +379,41 @@ int main ()
      }
     if (m==2){
     srand(time(NULL));
-    ii o=rand() % 100 + 1;
+    int o=rand() % 100 + 1;
     cout<<o<<endl;
     if (o>50)
         a[1][1]='X';
     else
         a[0][0]='X';
-    for (ii i=0; i<n; i++)
-        for (ii j=0; j<n; j++)
+    for (int i=0; i<n; i++)
+        for (int j=0; j<n; j++)
         {
             if (a[i][j]!='X')
                 a[i][j]='.';
 
 
         }system("cls");
-    for (ii i=0; i<n; i++)
+    for (int i=0; i<n; i++)
     {
         cout<<endl<<"========"<<endl<<'|';
 
-        for (ii j=0; j<n; j++)
+        for (int j=0; j<n; j++)
             cout<<a[i][j]<<'|';
     }
         cout<<endl<<"========"<<endl;
 
-    for (ii i=-2; i<n+2; i++)
-        for (ii j=-2; j<n+2; j++)
+    for (int i=-2; i<n+2; i++)
+        for (int j=-2; j<n+2; j++)
         {
             if (a[i][j]!='.'&&a[i][j]!='X')
                 a[i][j]='1';
         }
 
-    ii win = 0,k=0;
+    int win = 0,k=0;
 
     while (win==0)
     {
-        ii u,y;
+        int u,y;
         cout<<endl;
         cout<<"Enter coordinates:"<<endl;
    bool t=false;
@@ -449,11 +422,11 @@ int main ()
        cin >> y >> u;
        t=prov(y,u);
        system("cls");
-       if (t==false) {for (ii i=0; i<n; i++)
+       if (t==false) {for (int i=0; i<n; i++)
     {
         cout<<endl<<"========"<<endl<<'|';
 
-        for (ii j=0; j<n; j++)
+        for (int j=0; j<n; j++)
             cout<<a[i][j]<<'|';
     }
         cout<<endl<<"========"<<endl;
@@ -466,11 +439,11 @@ int main ()
         y--;
         u--;
         a[y][u]='0';system("cls");
-        for (ii i=0; i<n; i++)
+        for (int i=0; i<n; i++)
         {
 
         cout<<endl<<"========"<<endl<<'|';
-            for (ii j=0; j<n; j++)
+            for (int j=0; j<n; j++)
                  cout<<a[i][j]<<'|';
         }
   cout<<endl<<"========"<<endl;
@@ -485,12 +458,12 @@ int main ()
             a[2][0]='X';
         else
         {
-            ii  z=0;
+            int  z=0;
 
 
-            for (ii i=0; i<n; i++)
+            for (int i=0; i<n; i++)
             {
-                for (ii j=0; j<n; j++)
+                for (int j=0; j<n; j++)
                 {
                     if (a[i][j]=='X'&& sosx(i,j)==1)
                     {
@@ -513,9 +486,9 @@ int main ()
             if (win==1)
                 break;
             else
-                for (ii i=0; i<n; i++)
+                for (int i=0; i<n; i++)
                 {
-                    for (ii j=0; j<n; j++)
+                    for (int j=0; j<n; j++)
                         if (a[i][j]=='0'&&soso(i,j)==1)
                         {
                             a[l][p]='X';
@@ -530,8 +503,8 @@ int main ()
                 }
             if (z==0)
             {
-                for (ii i=0; i<n; i++){
-                    for (ii j=0; j<n; j++)
+                for (int i=0; i<n; i++){
+                    for (int j=0; j<n; j++)
                     {
                         if (a[i][j]=='X'&& sosx1(i,j)==1)
                         {
@@ -547,8 +520,8 @@ int main ()
                 }
             }
             if (z!=1) {
-              for (ii i=0; i<n; i++){
-                    for (ii j=0; j<n; j++)
+              for (int i=0; i<n; i++){
+                    for (int j=0; j<n; j++)
                     {
                         if (a[i][j]=='X'&& sosx2(i,j)==1)
                         {
@@ -566,21 +539,21 @@ int main ()
             }
         }system("cls");
             cout<<endl;
-        for (ii i=0; i<n; i++)
+        for (int i=0; i<n; i++)
         {
 
         cout<<endl<<"========"<<endl<<'|';
-            for (ii j=0; j<n; j++)
+            for (int j=0; j<n; j++)
                 cout<<a[i][j]<<'|';
         }
           cout<<endl<<"========"<<endl;
         if (win!=1)
         {
-            ii k1=0;
-            for (ii i=0; i<n; i++)
+            int k1=0;
+            for (int i=0; i<n; i++)
             {
 
-                for (ii j=0; j<n; j++)
+                for (int j=0; j<n; j++)
                     if (a[i][j]=='.')
                     {
                         k1++;
@@ -592,11 +565,11 @@ int main ()
                 win=2;
         }
     }system("cls");
-    for (ii i=0; i<n; i++)
+    for (int i=0; i<n; i++)
         {
 
         cout<<endl<<"========"<<endl<<'|';
-            for (ii j=0; j<n; j++)
+            for (int j=0; j<n; j++)
                 cout<<a[i][j]<<'|';
         }
           cout<<endl<<"========"<<endl;
@@ -607,35 +580,35 @@ int main ()
     }
     else
     {
-        for (ii i=0; i<n; i++)
-        for (ii j=0; j<n; j++)
+        for (int i=0; i<n; i++)
+        for (int j=0; j<n; j++)
         {
             if (a[i][j]!='X')
                 a[i][j]='.';
 
 
         }system("cls");
-    for (ii i=0; i<n; i++)
+    for (int i=0; i<n; i++)
     {
         cout<<endl<<"========"<<endl<<'|';
 
-        for (ii j=0; j<n; j++)
+        for (int j=0; j<n; j++)
             cout<<a[i][j]<<'|';
     }
         cout<<endl<<"========"<<endl;
 
-    for (ii i=-2; i<n+2; i++)
-        for (ii j=-2; j<n+2; j++)
+    for (int i=-2; i<n+2; i++)
+        for (int j=-2; j<n+2; j++)
         {
             if (a[i][j]!='.'&&a[i][j]!='X')
                 a[i][j]='1';
         }
 
-    ii win = 0,k=0;
+    int win = 0,k=0;
 
     while (win==0)
     {
-        ii u,y;
+        int u,y;
         cout<<endl;
         cout<<"Enter coordinates:"<<endl;
 bool t=false;
@@ -645,11 +618,11 @@ bool t=false;
        t=prov(y,u);
        system("cls");
 
-       if (t==false) {for (ii i=0; i<n; i++)
+       if (t==false) {for (int i=0; i<n; i++)
     {
         cout<<endl<<"========"<<endl<<'|';
 
-        for (ii j=0; j<n; j++)
+        for (int j=0; j<n; j++)
             cout<<a[i][j]<<'|';
     }
         cout<<endl<<"========"<<endl;
@@ -662,11 +635,11 @@ bool t=false;
         y--;
         u--;
         a[y][u]='0';system("cls");
-        for (ii i=0; i<n; i++)
+        for (int i=0; i<n; i++)
         {
 
         cout<<endl<<"========"<<endl<<'|';
-            for (ii j=0; j<n; j++)
+            for (int j=0; j<n; j++)
                  cout<<a[i][j]<<'|';
         }
   cout<<endl<<"========"<<endl;
@@ -675,12 +648,12 @@ bool t=false;
         if (k==1 && y==1 && u==1) a[0][0]='X';
      else
      {
-         ii  z=0;
+         int  z=0;
 
 
-            for (ii i=0; i<n; i++)
+            for (int i=0; i<n; i++)
             {
-                for (ii j=0; j<n; j++)
+                for (int j=0; j<n; j++)
                 {
                     if (a[i][j]=='X'&& sosx(i,j)==1)
                     {
@@ -703,9 +676,9 @@ bool t=false;
             if (win==1)
                 break;
             else
-                for (ii i=0; i<n; i++)
+                for (int i=0; i<n; i++)
                 {
-                    for (ii j=0; j<n; j++)
+                    for (int j=0; j<n; j++)
                         if (a[i][j]=='0'&&soso(i,j)==1)
                         {
                             a[l][p]='X';
@@ -720,8 +693,8 @@ bool t=false;
                 }
             if (z==0)
             {
-                for (ii i=0; i<n; i++){
-                    for (ii j=0; j<n; j++)
+                for (int i=0; i<n; i++){
+                    for (int j=0; j<n; j++)
                     {
                         if (a[i][j]=='X'&& sosx1(i,j)==1)
                         {
@@ -737,8 +710,8 @@ bool t=false;
                 }
             }
             if (z!=1) {
-              for (ii i=0; i<n; i++){
-                    for (ii j=0; j<n; j++)
+              for (int i=0; i<n; i++){
+                    for (int j=0; j<n; j++)
                     {
                         if (a[i][j]=='X'&& sosx2(i,j)==1)
                         {
@@ -756,21 +729,21 @@ bool t=false;
             }
         }
             cout<<endl;
-        for (ii i=0; i<n; i++)
+        for (int i=0; i<n; i++)
         {
 
         cout<<endl<<"========"<<endl<<'|';
-            for (ii j=0; j<n; j++)
+            for (int j=0; j<n; j++)
                 cout<<a[i][j]<<'|';
         }
           cout<<endl<<"========"<<endl;
         if (win!=1)
         {
-            ii k1=0;
-            for (ii i=0; i<n; i++)
+            int k1=0;
+            for (int i=0; i<n; i++)
             {
 
-                for (ii j=0; j<n; j++)
+                for (int j=0; j<n; j++)
                     if (a[i][j]=='.')
                     {
                         k1++;
@@ -782,11 +755,11 @@ bool t=false;
                 win=2;
         }
     }
-    for (ii i=0; i<n; i++)
+    for (int i=0; i<n; i++)
         {
 
         cout<<endl<<"========"<<endl<<'|';
-            for (ii j=0; j<n; j++)
+            for (int j=0; j<n; j++)
                 cout<<a[i][j]<<'|';
         }
           cout<<endl<<"========"<<endl;
