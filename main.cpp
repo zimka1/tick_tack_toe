@@ -357,6 +357,7 @@ bool prov (int y,int u)
         return true;
 
 }
+
 int main ()
 {
 
@@ -373,7 +374,10 @@ int main ()
      {
 
          cin>>m;
-         if (m!=1&&m!=2){system("cls");cout<<"Repeat please)"<<endl; cout<<"How will you go?"<<endl;}
+         if (m!=1&&m!=2){
+                system("cls");
+         cout<<"Repeat please)"<<endl;
+         cout<<"How will you go?"<<endl;}
         else
             break;
      }
