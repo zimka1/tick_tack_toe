@@ -5,7 +5,7 @@ using namespace std;
 
 char a[6][6];
 int l=0,p=0,t=0,e=0;
-int soso (int i,int j)
+int soso(int i,int j)
 {
     int k=0;
     if(a[i - 1] [j - 1] == '0'&& a[i - 2][j - 2] =='.')
@@ -370,7 +370,7 @@ int main ()
     int n=3,m;
     cout<<"How will you go?"<<endl;
 
-     while (m!=1||m!=2)
+     while (m!=1 || m!=2)
      {
 
          cin>>m;
@@ -420,7 +420,7 @@ int main ()
         int u,y;
         cout<<endl;
         cout<<"Enter coordinates:"<<endl;
-   bool t=false;
+
    while (t!=true)
    {
        cin >> y >> u;
@@ -615,7 +615,7 @@ int main ()
         int u,y;
         cout<<endl;
         cout<<"Enter coordinates:"<<endl;
-bool t=false;
+    bool t=false;
    while (t!=true)
    {
        cin >> y >> u;
